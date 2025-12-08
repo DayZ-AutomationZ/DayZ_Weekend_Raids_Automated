@@ -1,0 +1,15 @@
+{
+  // COPY YOUR LIVE cfggameplay.json HERE
+  // THEN SET THESE TWO VALUES FOR RAID-ON MODE:
+  // "disableBaseDamage": false,
+  // "disableContainerDamage": false,
+
+  "version": 123,
+  "GeneralData": {
+    "disableBaseDamage": false,
+    "disableContainerDamage": false,
+    "disableRespawnDialog": false,
+    "disableRespawnInUnconsciousness": true
+  }
+  // ...rest of your original cfgGameplay.json...
+}
