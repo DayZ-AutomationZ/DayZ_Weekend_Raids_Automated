@@ -132,7 +132,7 @@ This does:
 
 ---
 
-## 5. How it works (short version)
+## 5. How it works
 
 - DayZ reads **only one** `cfggameplay.json` at startup.
 - The Pi uploads the correct version (`raid_on` or `raid_off`) via FTP **before** your server restarts or during raid-window switches.
