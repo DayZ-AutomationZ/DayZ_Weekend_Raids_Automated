@@ -1,7 +1,7 @@
 # Automatic Weekend Raids Mode (cfgGameplay switcher)
 
 This package lets your Raspberry Pi automatically toggle DayZ **raid mode** on your Nitrado server by uploading different `cfggameplay.json` files via FTP.
-NO NEED FOR MODS! JUST SIMPLE FTP UPLOADS FROM YOUR PI VPS OR any machine running python to your server to change 2 values in `cfggameplay.json`
+NO NEED FOR MODS! just simple ftp uploads from your PI VPS or any machine running python to your server to change 2 values in `cfggameplay.json`
 
 - **Raid ON:** `disableBaseDamage = false`, `disableContainerDamage = false`  
 - **Raid OFF:** `disableBaseDamage = true`,  `disableContainerDamage = true`  
