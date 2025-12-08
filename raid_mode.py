@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 # ==============================
-# CONFIGURE THESE VALUES
+# CONFIGURE THESE VALUES FOR YOUR SERVERS FTP.
 # ==============================
 FTP_HOST = "YOUR_FTP_HOST"
 FTP_USER = "YOUR_FTP_USERNAME"
@@ -15,7 +15,7 @@ REMOTE_DIR = "/dayzstandalone/mpmissions/dayzOffline.chernarusplus"
 REMOTE_CFG = "cfggameplay.json"
 
 # Local folder on the Pi where your templates live
-LOCAL_DIR = Path("/home/d3nd4n/dayz_raid")  # adjust username if needed
+LOCAL_DIR = Path("/home/PIusername/dayz_raid")  # adjust username if needed
 
 def upload_cfg(mode: str):
     if mode == "on":
