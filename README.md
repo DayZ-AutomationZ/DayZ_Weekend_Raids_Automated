@@ -60,7 +60,7 @@ If your username is not `PIusername`, just adjust the paths in `raid_mode.py` an
 
 ---
 
-## 3. Edit `raid_mode.py` with your FTP details
+## 3. Edit `raid_mode.py` with your FTP details ⚠️ Don’t share screenshots of this file, it contains your FTP password.
 
 Open `raid_mode.py` on the Pi and set:
 
