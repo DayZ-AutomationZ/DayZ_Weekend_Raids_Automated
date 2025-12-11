@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.pyc
+
+# DayZ / Nitrado junk
+*.rpt
+*.log
+storage_*/
+*.core
