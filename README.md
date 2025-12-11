@@ -1,3 +1,11 @@
+### TL;DR
+
+1. Copy `raid_mode.py` + both `cfggameplay_raid_*.json` to your Pi.
+2. Make the two JSONs full copies of your real `cfggameplay.json` (only toggle the 2 booleans).
+3. Put your FTP details into `raid_mode.py`.
+4. Test once: `python3 raid_mode.py on` / `off`.
+5. Add the cron block to `crontab -e`.
+
 # Automatic Weekend Raids Mode (cfgGameplay switcher)
 
 This package lets your Raspberry Pi automatically toggle DayZ **raid mode** on your Nitrado server by uploading different `cfggameplay.json` files via FTP.
