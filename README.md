@@ -2,9 +2,10 @@
 
 1. Copy `raid_mode.py` + both `cfggameplay_raid_*.json` to your Pi.
 2. Make the two JSONs full copies of your real `cfggameplay.json` (only toggle the 2 booleans).
-3. Put your FTP details into `raid_mode.py`.
-4. Test once: `python3 raid_mode.py on` / `off`.
-5. Add the cron block to `crontab -e`.
+3. Add the contents of the real `cfggameplay.json` `cfggameplay_raid_*.json`  (remember! only toggle the damage booleans). true / false
+4. Put your FTP details into `raid_mode.py`.
+5. Test once: `python3 raid_mode.py on` / `off`.
+6. Add the cron block to `crontab -e`.
 
 # Automatic Weekend Raids Mode (cfgGameplay switcher)
 
