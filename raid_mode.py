@@ -8,6 +8,7 @@ print(f"[CRON] raid_mode.py started at {datetime.now()}")
 FTP_HOST = "FTP.HOST.COM"
 FTP_USER = "username"
 FTP_PASS = "password"
+USE_BBP = False  # set True if you run BaseBuildingPlus
 
 # Remote paths
 REMOTE_GAMEPLAY_DIR = "/dayzstandalone/mpmissions/dayzOffline.chernarusplus"
@@ -41,8 +42,9 @@ def upload_cfg(mode: str):
     with ftplib.FTP(FTP_HOST, FTP_USER, FTP_PASS) as ftp:
         # Upload cfggameplay
         upload_file(ftp, local_gameplay, REMOTE_GAMEPLAY_DIR, REMOTE_GAMEPLAY_CFG)
-        # Upload BBP settings
-        upload_file(ftp, local_bbp, REMOTE_BBP_DIR, REMOTE_BBP_CFG)
+        # Upload BBP settings optional
+        if USE_BBP:
+            upload_file(ftp, local_bbp, REMOTE_BBP_DIR, REMOTE_BBP_CFG)
 
     print(f"[Raid {mode.upper()}] Upload complete.")
 
@@ -51,5 +53,6 @@ if __name__ == "__main__":
         print("Usage: python raid_mode.py on|off")
         raise SystemExit(1)
     upload_cfg(sys.argv[1])
+
 
 
