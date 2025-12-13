@@ -100,45 +100,31 @@ Check on FTP that `cfggameplay.json` on the server changed and try to start the 
 
 ## 4. Hook into your raid schedule with cron
 
-We’ll assume:
-
-- Server restarts: **00:06**, **06:09**, **12:09**, **18:08**
-- Raid times: **Friday, Saturday, Sunday – 18:00–00:00**
-- Pi user: **d3nd4n**
-
 On the Pi, edit cron:
 
 ```bash
 crontab -e
 ```
 
-Add this block **below** your existing ClaimBot line:
+Add this block:
 
 ```cron
-# --- RAID OFF BEFORE ALL RESTARTS (EVERY DAY) ---
-0 0 * * * python3 /home/PIusername/dayz_raid/raid_mode.py off
-5 6 * * * python3 /home/PIusername/dayz_raid/raid_mode.py off
-5 12 * * * python3 /home/PIusername/dayz_raid/raid_mode.py off
-5 18 * * * python3 /home/PIusername/dayz_raid/raid_mode.py off
-
-# --- RAID OFF AT END OF RAID WINDOW (23:59 FRI/SAT/SUN) ---
-59 23 * * 5 python3 /home/PIusername/dayz_raid/raid_mode.py off
-59 23 * * 6 python3 /home/PIusername/dayz_raid/raid_mode.py off
-59 23 * * 0 python3 /home/PIusername/dayz_raid/raid_mode.py off
-
-# --- RAID ON AT 18:00 (FRI/SAT/SUN) ---
-0 18 * * 5 python3 /home/PIusername/dayz_raid/raid_mode.py on
-0 18 * * 6 python3 /home/PIusername/dayz_raid/raid_mode.py on
-0 18 * * 0 python3 /home/PIusername/dayz_raid/raid_mode.py on
+# --- RAID OFF / ON scheduler) ---
+* * * * * /usr/bin/python3 /home/Piusername/dayz_raid/raid_scheduler.py >> /home/PIusername/dayz_raid/raid_scheduler.log 2>&1
 ```
 
 This does:
 
-- **Every day**: pushes **RAID-OFF** config shortly before your restarts.  
-- **Fri/Sat/Sun at 18:00**: pushes **RAID-ON** config.  
+- **Fri/Sat/Sun at 18:00**: pushes **RAID-ON** using `raid_scheduler.py` set the time here!
 - **Fri/Sat/Sun at 23:59**: pushes **RAID-OFF** again so 00:06 restart comes back up with safe settings.
 
-> You can tweak these times later without touching the Python script – just edit your crontab.
+- `raid_scheduler.py` (set times here) you cannot use 01:05 for example
+- it simply is 1, 5 then best times to set are 17, 59 for example: when a server restarts 18:00
+- upload files before restart at least a few minutes!, my server restarts 18:06, so 17:59 is a safe choice.
+- dont forget to do `chmod +x /home/PIusername/dayz_raid/raid_scheduler.py` and `chmod +x /home/PIusername/dayz_raid/raid_mode.py`
+- Set the times on line 17 in `raid_scheduler.py` Line 17: `if dow in (4, 5, 6) and time(17, 59) <= t < time(23, 59):` SO `time(17, 59)` is for Raid ON `time(23, 59)` is for Raid OFF
+
+> You can tweak these times later without touching the Python script – just edit `raid_scheduler.py`
 
 ---
 
