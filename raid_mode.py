@@ -17,7 +17,7 @@ REMOTE_BBP_DIR = "/dayzstandalone/config/BaseBuildingPlus"
 REMOTE_BBP_CFG = "BBP_Settings.json"
 
 # Local folder on the Pi
-LOCAL_DIR = Path("/home/d3nd4n/dayz_raid")
+LOCAL_DIR = Path("/home/PIusername/dayz_raid")
 
 def upload_file(ftp, local_path: Path, remote_dir: str, remote_name: str):
     if not local_path.exists():
@@ -51,4 +51,5 @@ if __name__ == "__main__":
         print("Usage: python raid_mode.py on|off")
         raise SystemExit(1)
     upload_cfg(sys.argv[1])
+
 
