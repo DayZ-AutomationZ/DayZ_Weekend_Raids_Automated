@@ -5,9 +5,9 @@ from datetime import datetime
 
 print(f"[CRON] raid_mode.py started at {datetime.now()}")
 
-FTP_HOST = "ms2329.gamedata.io"
-FTP_USER = "ni12291535_1"
-FTP_PASS = "Nikstur89"
+FTP_HOST = "FTP.HOST.COM"
+FTP_USER = "username"
+FTP_PASS = "password"
 
 # Remote paths
 REMOTE_GAMEPLAY_DIR = "/dayzstandalone/mpmissions/dayzOffline.chernarusplus"
@@ -51,3 +51,4 @@ if __name__ == "__main__":
         print("Usage: python raid_mode.py on|off")
         raise SystemExit(1)
     upload_cfg(sys.argv[1])
+
