@@ -9,6 +9,8 @@
 4. Put your FTP details into `raid_mode.py`.
 5. Test once: `python3 raid_mode.py on` / `off`.
 6. Add the cron block to `crontab -e`.
+7. Optional BBP Settings  `USE_BBP = False` false is default, set True if you run BaseBuildingPlus. Set it true inside `raid_mode.py` below FTP Credentials
+
 
 This package lets your Raspberry Pi automatically toggle DayZ **raid mode** on your Nitrado server by uploading different `cfggameplay.json` files via FTP.
 NO NEED FOR MODS! just simple ftp uploads from your PI VPS or any machine running python to your server to change 2 values in `cfggameplay.json`
