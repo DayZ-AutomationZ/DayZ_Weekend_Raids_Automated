@@ -6,10 +6,16 @@
 1. Copy `raid_mode.py` + both `cfggameplay_raid_*.json` to your Pi.
 2. Make the two JSONs full copies of your real `cfggameplay.json` (only toggle the 2 booleans).
 3. Add the contents of the real `cfggameplay.json` into both `cfggameplay_raid_*.json`  (remember! only toggle the damage booleans). true / false
-4. Put your FTP details into `raid_mode.py`.
-5. Test once: `python3 raid_mode.py on` / `off`.
-6. Add the cron block to `crontab -e`.
-7. Optional BBP Settings  `USE_BBP = False` false is default, set True if you run BaseBuildingPlus. Set it true inside `raid_mode.py` below FTP Credentials
+4. So `cfggameplay_raid_on.json` and `cfggameplay_raid_off.json` here you set `"disableBaseDamage": false,` for `cfggameplay_raid_on.json` and `"disableBaseDamage": true,` for cfggameplay_raid_off.json
+5. Put your FTP details into `raid_mode.py`.
+6. Test once: `python3 raid_mode.py on` / `off`.
+7. Add the cron block to `crontab -e`.
+8. Optional BBP Settings  `USE_BBP = False` false is default, set True if you run BaseBuildingPlus. Set it true inside `raid_mode.py` below FTP Credentials
+9. If using BBP add `BBP_raid_on.json` and `BBP_raid_off.json` to /home/PIusername/dayz_raid/ the files are included. Make two JSONs full copies of your real `BBP_Settings.json` (only toggle the 2 booleans).
+ Add the contents of the real `cfggameplay.json` into both `BBP_raid_*.json`  (remember! only toggle the damage booleans). in this case 1 or 0
+ so in `BBP_raid_on.json` you set the boolean for `"BBP_DisableDestroy": 0,` so to 0. And in `BBP_raid_off.json` to 1.
+ `"BBP_DisableDestroy": 1,` is Raid OFF `"BBP_DisableDestroy": 0,` Raid on.
+ Same like `cfggameplay_raid_on.json` and `cfggameplay_raid_off.json`
 
 
 This package lets your Raspberry Pi automatically toggle DayZ **raid mode** on your Nitrado server by uploading different `cfggameplay.json` files via FTP.
