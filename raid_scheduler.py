@@ -4,7 +4,7 @@ from pathlib import Path
 import subprocess
 import json
 
-BASE = Path("/home/d3nd4n/dayz_raid")
+BASE = Path("/home/PIusername/dayz_raid")
 STATE_FILE = BASE / "raid_state.json"
 RAID_MODE = BASE / "raid_mode.py"
 
@@ -47,3 +47,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
